@@ -74,4 +74,13 @@ a img:hover {
 body {
   font-family: "Noto Sans JP", sans-serif;
   font-feature-settings: "palt";
+  color: #333333;
+  background-color: #f5f5f5;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }/*# sourceMappingURL=style.css.map */
