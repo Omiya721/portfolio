@@ -22,13 +22,19 @@
                     <a href="#">M.Omiya</a>
                 </div>
 
+                <button type="button" class="header__hamburger js-hamburger" aria-label="メニューを開閉する">
+                    <span class="header__hamburger-line"></span>
+                    <span class="header__hamburger-line"></span>
+                    <span class="header__hamburger-line"></span>
+                </button>
+
                 <nav class="header__nav">
                     <ul class="header__list">
-                        <li class="header__item"><a href="#" class="header__link">Top</a></li>
-                        <li class="header__item"><a href="#created" class="header__link">Created</a></li>
-                        <li class="header__item"><a href="#services" class="header__link">Services</a></li>
+                        <li class="header__item"><a href="#" class="header__link js-nav-link">Top</a></li>
+                        <li class="header__item"><a href="#created" class="header__link js-nav-link">Created</a></li>
+                        <li class="header__item"><a href="#services" class="header__link js-nav-link">Services</a></li>
                         <li class="header__item">
-                            <a href="#contact" class="btn header__btn">Contact</a>
+                            <a href="#contact" class="btn header__btn js-nav-link">Contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -205,5 +211,7 @@
         </footer>
         <!-- フッターここまで -->
     
+        <script src="js/main.js"></script>
+        
     </body>
 </html>
