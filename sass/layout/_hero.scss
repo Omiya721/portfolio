@@ -28,15 +28,11 @@
     }
 
     &__title {
-        font-size: 32px;
+        font-size: clamp(24px, 1.875vw + 13.6px, 32px);
         font-weight: bold;
         line-height: 1.6;
         color: $color-text-main;
         margin-bottom: 40px;
-
-        @media #{$breakpoint-sp} {
-            font-size: 22px;
-        }
     }
 
     &__text {

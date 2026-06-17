@@ -249,16 +249,11 @@ img {
   margin-right: auto;
 }
 .hero__title {
-  font-size: 32px;
+  font-size: clamp(24px, 1.875vw + 13.6px, 32px);
   font-weight: bold;
   line-height: 1.6;
   color: #333333;
   margin-bottom: 40px;
-}
-@media screen and (max-width: 767px) {
-  .hero__title {
-    font-size: 22px;
-  }
 }
 .hero__text {
   font-size: 16px;
@@ -336,7 +331,6 @@ img {
 }
 .services__inner {
   margin: 0 auto;
-  padding: 0 20px;
 }
 .services__title {
   font-size: 32px;
