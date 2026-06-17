@@ -8,6 +8,10 @@
       @extend %l-inner;
       margin: 0 auto;
       padding: 0 100px;
+
+      @media #{$breakpoint-sp} {
+        padding: 0 20px;
+      }
     }
 
     &__title {

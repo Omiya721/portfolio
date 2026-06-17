@@ -288,7 +288,7 @@ img {
   .hero__buttons {
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 25px;
   }
 }
 
@@ -299,6 +299,11 @@ img {
 .created__inner {
   margin: 0 auto;
   padding: 0 100px;
+}
+@media screen and (max-width: 767px) {
+  .created__inner {
+    padding: 0 20px;
+  }
 }
 .created__title {
   font-size: 32px;
@@ -540,6 +545,11 @@ img {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+@media screen and (max-width: 767px) {
+  .card {
+    width: 100%;
+  }
 }
 .card__img-wrapper {
   width: 100%;
