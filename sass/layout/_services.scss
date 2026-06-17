@@ -1,0 +1,76 @@
+@use "../foundation/base" as *;
+
+
+.services {
+  padding: 100px 0;
+
+  &__inner {
+    @extend %l-inner;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: #333333;
+  }
+
+  .scroll-line {
+    margin: 24px auto 40px;
+  }
+
+  &__lead {
+    font-size: 16px;
+    color: $color-text-main;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 60px;
+
+    @media #{$breakpoint-sp} {
+      font-size: 14px;
+      text-align: left;
+    }
+  }
+
+  &__list {
+    max-width: 800px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__term {
+    font-size: 18px;
+    font-weight: 700;
+    color: $color-text-main;
+    margin-bottom: 8px;
+    padding-left: 12px;
+    border-left: 4px solid $color-accent;
+    line-height: 1.2;
+
+    @media #{$breakpoint-sp} {
+      font-size: 16px;
+    }
+  }
+
+  &__description {
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.7;
+    margin-left: 0;
+
+    @media #{$breakpoint-sp} {
+      font-size: 14px;
+    }
+  }
+}
