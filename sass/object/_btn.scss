@@ -1,0 +1,24 @@
+@use "../foundation/base" as *;
+
+.btn {
+  display: inline-block;
+  background-color: $color-accent;
+  color: $color-white;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba($color-accent, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}
