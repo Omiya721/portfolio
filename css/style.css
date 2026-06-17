@@ -234,7 +234,7 @@ img {
   cursor: pointer;
 }
 .btn:hover {
-  opacity: 0.85;
+  opacity: 0.7;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 191, 165, 0.3);
 }
