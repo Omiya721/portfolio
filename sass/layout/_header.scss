@@ -1,0 +1,67 @@
+@use "../foundation/base" as *;
+
+.header {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  &__inner {
+    @extend %l-inner;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    
+    @media #{$breakpoint-sp} {
+      height: 70px;
+    }
+  }
+
+  &__logo {
+    a {
+      font-size: 24px;
+      font-weight: bold;
+      color: $color-text-main;
+      transition: all 0.3s ease; 
+
+      &:hover {
+        opacity: 0.8;
+      }
+      
+      @media #{$breakpoint-sp} {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__nav {
+    @media #{$breakpoint-sp} {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__link {
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-text-main;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__btn {
+    padding: 8px 55px;
+    font-size: 16px;
+  }
+}
