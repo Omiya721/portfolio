@@ -1,0 +1,70 @@
+@use "../foundation/base" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 20px);
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); 
+  }
+
+  &__img-wrapper {
+    width: 100%;
+    margin-bottom: 30px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: $color-text-main;
+    line-height: 1.4;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  &__tech {
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 24px;
+    margin-top: auto;
+  }
+
+  &__links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__link-icon {
+    font-size: 24px;
+    color: $color-text-main;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}

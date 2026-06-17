@@ -1,0 +1,40 @@
+@use "../foundation/base" as *;
+
+.created {
+  padding: 100px 0;
+
+  &__inner {
+    @extend %l-inner;
+    margin: 0 auto;
+    padding: 0 100px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: $color-text-main;
+  }
+
+  .scroll-line {
+    margin: 24px auto 60px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+
+    @media #{$breakpoint-sp} {
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+
+  &__item {
+
+    @media #{$breakpoint-sp} {
+      width: 100%;
+    }
+  }
+}
