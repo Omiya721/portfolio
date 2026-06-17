@@ -1,0 +1,72 @@
+@use "../foundation/base" as *;
+
+.hero {
+    position: relative;
+    width: 100%;
+    padding-top: 160px;
+    padding-bottom: 120px;
+    text-align: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                      url("../img/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media #{$breakpoint-sp} {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+
+    &__inner {
+        @extend %l-inner;
+    }
+
+    &__content {
+        max-width: 840px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1.6;
+        color: $color-text-main;
+
+        @media #{$breakpoint-sp} {
+            font-size: 22px;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 1.8;
+        color: $color-text-sub;
+        margin-bottom: 40px;
+
+        @media #{$breakpoint-sp} {
+            font-size: 14px;
+            text-align: left;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        .btn {
+            width: 200px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media #{$breakpoint-sp} {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        }
+    }
+}
