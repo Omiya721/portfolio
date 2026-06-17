@@ -224,6 +224,7 @@ img {
 
 .created {
   padding: 100px 0;
+  background-color: #f9f9f9;
 }
 .created__inner {
   margin: 0 auto;

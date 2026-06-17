@@ -2,6 +2,7 @@
 
 .created {
     padding: 100px 0;
+    background-color: $color-bg-dark;
 
     &__inner {
       @extend %l-inner;
