@@ -57,5 +57,18 @@ gsap.from(".hero__content > *", {
   duration: 1.0,
   stagger: 0.3,
   ease: "power2.out",
-  delay: 0.2 // 読み込み後、一瞬待ってから開始
+  delay: 0.2
+});
+
+// サービスセクション
+gsap.from(".services__item", {
+  scrollTrigger: {
+    trigger: ".services__list",
+    start: "top 80%",
+  },
+  y: 30,
+  opacity: 0,
+  duration: 0.8,
+  stagger: 0.4,
+  ease: "power2.out"
 });
