@@ -28,7 +28,8 @@
     }
 
     &__title {
-        font-size: clamp(24px, 1.875vw + 13.6px, 32px);
+        overflow-wrap: break-word;
+        font-size: clamp(20px, 1.875vw + 13.6px, 32px);
         font-weight: bold;
         line-height: 1.6;
         color: $color-text-main;

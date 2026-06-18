@@ -1,0 +1,17 @@
+@use "../foundation/base" as *;
+
+.scroll-line {
+    margin: 10px auto 40px;
+    width: 200px;
+    height: 1.5px;
+    background-color: $color-text-main;
+    
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s ease-out, background-color 0.5s ease;
+    }
+
+.scroll-line.is-active {
+    transform: scaleX(1);
+    background-color: $color-accent;
+}
