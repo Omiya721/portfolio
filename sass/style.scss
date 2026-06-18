@@ -10,9 +10,11 @@
 @use "layout/services";
 @use "layout/contact";
 @use "layout/footer";
+@use "layout/project";
 
 // object
 @use "object/btn";
 @use "object/scroll-line";
 @use "object/card";
 @use 'object/scroll-top';
+@use "object/project-card";
