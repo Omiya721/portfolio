@@ -20,6 +20,7 @@ navLinks.forEach((link) => {
 //GSAPアニメーション
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 // タイトル下の線
 document.querySelectorAll(".js-scroll-line").forEach((line) => {
@@ -38,7 +39,7 @@ document.querySelectorAll(".js-scroll-line").forEach((line) => {
 });
 
 // 制作物カード
-gsap.from(".card", {
+gsap.from(".card__inner-box", {
   scrollTrigger: {
     trigger: ".created__list",
     start: "top 70%"
@@ -71,4 +72,20 @@ gsap.from(".services__item", {
   duration: 0.8,
   stagger: 0.4,
   ease: "power2.out"
+});
+
+// スクロールトップボタン
+const topBtn = document.querySelector(".js-scroll-top");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 500) {
+    topBtn.classList.add("is-show");
+  } else {
+    topBtn.classList.remove("is-show");
+  }
+});
+
+topBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  gsap.to(window, { duration: 1, scrollTo: 0, ease: "power2.inOut" });
 });
