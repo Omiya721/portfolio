@@ -1,1 +1,52 @@
 @use "../foundation/base" as *;
+
+.project-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 140px 20px 40px 20px;
+
+    &__intro {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    &__hero {
+        margin-bottom: 30px;
+        
+        &-img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+        margin-bottom: 16px;
+    }
+
+    &__lead {
+        color: #666;
+        margin-bottom: 30px;
+    }
+    
+}
+
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    
+    .btn {
+        width: 200px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
+}

@@ -9,7 +9,11 @@
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.8s ease-out, background-color 0.5s ease;
-    }
+
+    &--title {
+    width: 600px;
+  }
+}
 
 .scroll-line.is-active {
     transform: scaleX(1);
