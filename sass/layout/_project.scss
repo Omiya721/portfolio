@@ -12,6 +12,8 @@
 
     &__hero {
         margin-bottom: 30px;
+        width: 800px;
+        margin: 0 auto;
         
         &-img {
         width: 100%;
@@ -24,6 +26,7 @@
     &__title {
         font-size: 2rem;
         margin-bottom: 16px;
+        margin-top: 40px;
     }
 
     &__lead {

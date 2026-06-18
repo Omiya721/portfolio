@@ -512,6 +512,8 @@ img {
 }
 .project-detail__hero {
   margin-bottom: 30px;
+  width: 800px;
+  margin: 0 auto;
 }
 .project-detail__hero-img {
   width: 100%;
@@ -522,6 +524,7 @@ img {
 .project-detail__title {
   font-size: 2rem;
   margin-bottom: 16px;
+  margin-top: 40px;
 }
 .project-detail__lead {
   color: #666;

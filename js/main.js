@@ -74,6 +74,48 @@ gsap.from(".services__item", {
   ease: "power2.out"
 });
 
+// Tech Stack
+gsap.from(".tech-list__item", {
+  scrollTrigger: {
+    trigger: ".tech-list",
+    start: "top 80%",
+  },
+  y: 30,
+  opacity: 0,
+  duration: 0.8,
+  stagger: 0.4,
+  ease: "power2.out"
+});
+
+// Overview
+gsap.from(".project-summary__item", {
+  scrollTrigger: {
+    trigger: ".project-summary__list",
+    start: "top 80%",
+  },
+  y: 30,
+  opacity: 0,
+  duration: 0.8,
+  stagger: 0.3,
+  ease: "power2.out"
+});
+
+//Features
+document.querySelectorAll(".project-media-text").forEach((card) => {
+  gsap.from(card, {
+    scrollTrigger: {
+      trigger: card,
+      start: "top 80%",
+      toggleActions: "play none none none"
+    },
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power2.out"
+  });
+});
+
+
 // スクロールトップボタン
 const topBtn = document.querySelector(".js-scroll-top");
 
