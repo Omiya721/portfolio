@@ -1,5 +1,7 @@
 'use strict';
 
+import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe-lightbox.esm.min.js';
+
 //ハンバーガーメニュー
 const hamburger = document.querySelector('.js-hamburger');
 const header = document.querySelector('.header');
@@ -131,3 +133,11 @@ topBtn.addEventListener("click", (e) => {
   e.preventDefault();
   gsap.to(window, { duration: 1, scrollTo: 0, ease: "power2.inOut" });
 });
+
+// PhotoSwipe
+const lightbox = new PhotoSwipeLightbox({
+  gallery: 'body',
+  children: 'a.js-lightbox',
+  pswpModule: () => import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.esm.min.js')
+});
+lightbox.init();
