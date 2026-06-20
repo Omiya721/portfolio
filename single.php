@@ -1,188 +1,120 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Font Awesome (アイコン font) の読み込み -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <!-- Google Fonts (Noto Sans JP)読み込み -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-        <!-- Luminous読み込み -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css">
-        <link rel="stylesheet" href="./css/style.css">
-        <title>Misa Omiya | PortfolioSite</title>
-    </head>
-    <body>
+<?php get_header(); ?>
 
-        <!-- ヘッダーここから -->
-        <header class="header">
-            <div class="header__inner">
+    <article class="project-detail">
 
-                <div class="header__logo">
-                    <a href="./index.html">M.Omiya</a>
-                </div>
-
-                <button type="button" class="header__hamburger js-hamburger" aria-label="メニューを開閉する">
-                    <span class="header__hamburger-line"></span>
-                    <span class="header__hamburger-line"></span>
-                    <span class="header__hamburger-line"></span>
-                </button>
-
-                <nav class="header__nav">
-                    <ul class="header__list">
-                        <li class="header__item"><a href="./index.html" class="header__link js-nav-link">Top</a></li>
-                        <li class="header__item"><a href="#created" class="header__link js-nav-link">Created</a></li>
-                        <li class="header__item"><a href="#services" class="header__link js-nav-link">Services</a></li>
-                        <li class="header__item">
-                            <a href="#contact" class="btn header__btn js-nav-link">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-
+        <section class="project-detail__intro">
+            <div class="project-detail__hero">
+                <img src="./img/created1.png" alt="AIチャットボット導入LP" class="project-detail__hero-img">
             </div>
-        </header>
-        <!-- ヘッダーここまで -->
+            <h1 class="project-detail__title">【自主制作】AIチャットボット導入LP</h1>
+            <div class="scroll-line scroll-line--title js-scroll-line"></div>
+            <p class="project-detail__lead">デザインデータをもとに、保守性を考慮したコーディングとWordPress実装を担当しました。</p>
 
-        <article class="project-detail">
+            <div class="column__buttons project-links">
+                <a href="https://example.com" class="btn btn--primary" target="_blank">実際のサイトを見る</a>
+                <a href="https://github.com/..." class="btn btn--secondary" target="_blank">GitHubでコードを見る</a>
+            </div>
+        </section>
+
+        <div class="project-detail__body">
+
+            <section class="project-summary">
+                <h2 class="project-summary__section-title">Overview</h2>
+                <div class="scroll-line js-scroll-line"></div>
+                <dl class="project-summary__list">
+                    <div class="project-summary__item">
+                        <dt class="project-summary__term">担当範囲</dt>
+                        <dd class="project-summary__desc">
+                            コーディング、WordPress構築、運用設計
+                            <small>Design: <a href="https://www.figma.com/community/file/1220421382277658314/btob" target="_blank" rel="noopener noreferrer">acoco1102様（BtoB ランディングページ ワイヤーフレーム）</a></small>
+                        </dd>
+                    </div>
+                    <div class="project-summary__item">
+                        <dt class="project-summary__term">制作期間</dt>
+                        <dd class="project-summary__desc">9日間</dd>
+                    </div>
+                    <div class="project-summary__item">
+                        <dt class="project-summary__term">課題</dt>
+                        <dd class="project-summary__desc">非エンジニアも管理画面から運用や修正を行えるよう制作</dd>
+                    </div>
+                    <div class="project-summary__item">
+                        <dt class="project-summary__term">解決策</dt>
+                        <dd class="project-summary__desc">ACF Blocksを利用し、管理画面からレイアウトが組めるカスタムブロックを実装。ブロック単位での追加や編集を可能に。</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <section class="project-feature">
+                <h2 class="project-feature__section-title">Features</h2>
+                <div class="scroll-line js-scroll-line"></div>
+
+                <div class="project-media-text">
+                    <figure class="project-media-text__media">
+                        <a href="./img/chatbot-lp-admin-panel.png" 
+                            class="js-lightbox"
+                            target="_blank">
+                            <img src="./img/chatbot-lp-admin-panel.png" alt="管理画面の編集UI">
+                        </a>
+                    </figure>
     
-            <section class="project-detail__intro">
-                <div class="project-detail__hero">
-                    <img src="./img/created1.png" alt="AIチャットボット導入LP" class="project-detail__hero-img">
+                    <div class="project-media-text__content">
+                        <h3 class="project-media-text__title">誰でも直感的に更新できる管理画面</h3>
+                        <p class="project-media-text__desc">
+                            ACF Blocksを活用し、管理画面から直接コンテンツを編集できるよう構築しました。<br>
+                            プレビューを確認せずとも、管理画面上のレイアウトで直感的に更新が可能です。
+                        </p>
+                    </div>
                 </div>
-                <h1 class="project-detail__title">【自主制作】AIチャットボット導入LP</h1>
-                <div class="scroll-line scroll-line--title js-scroll-line"></div>
-                <p class="project-detail__lead">デザインデータをもとに、保守性を考慮したコーディングとWordPress実装を担当しました。</p>
 
+                <div class="project-media-text">
+                    <figure class="project-media-text__media">
+                        <a href="./img/chatbot-lp-admin-panel.png" 
+                            class="js-lightbox" 
+                            target="_blank">
+                            <img src="./img/chatbot-lp-admin-panel.png" alt="管理画面の編集UI">
+                        </a>
+                    </figure>
+    
+                    <div class="project-media-text__content">
+                        <h3 class="project-media-text__title">誰でも直感的に更新できる管理画面</h3>
+                        <p class="project-media-text__desc">
+                            ACF Blocksを活用し、管理画面から直接コンテンツを編集できるよう構築しました。<br>
+                            プレビューを確認せずとも、管理画面上のレイアウトで直感的に更新が可能です。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project-tech">
+                <h2 class="project-tech__section-title">Tech Stack</h2>
+                <div class="scroll-line js-scroll-line"></div>
+                
+                <ul class="tech-list">
+                    <li class="tech-list__item">
+                        <span class="tech-list__category">Frontend</span>
+                        <span class="tech-list__name">HTML5 / Sass / JavaScript</span>
+                    </li>
+                    <li class="tech-list__item">
+                        <span class="tech-list__category">CMS</span>
+                        <span class="tech-list__name">WordPress / PHP / ACF Blocks</span>
+                    </li>
+                    <li class="tech-list__item">
+                        <span class="tech-list__category">Tools</span>
+                        <span class="tech-list__name">VSCode / GitHub / Figma</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="project-detail__cta">
+                <h2 class="project-detail__cta-title">このプロジェクトの詳細を確認する</h2>
                 <div class="column__buttons project-links">
                     <a href="https://example.com" class="btn btn--primary" target="_blank">実際のサイトを見る</a>
                     <a href="https://github.com/..." class="btn btn--secondary" target="_blank">GitHubでコードを見る</a>
                 </div>
             </section>
+            
+        </div>
 
-            <div class="project-detail__body">
+    </article>
 
-                <section class="project-summary">
-                    <h2 class="project-summary__section-title">Overview</h2>
-                    <div class="scroll-line js-scroll-line"></div>
-                    <dl class="project-summary__list">
-                        <div class="project-summary__item">
-                            <dt class="project-summary__term">担当範囲</dt>
-                            <dd class="project-summary__desc">
-                                コーディング、WordPress構築、運用設計
-                                <small>Design: <a href="https://www.figma.com/community/file/1220421382277658314/btob" target="_blank" rel="noopener noreferrer">acoco1102様（BtoB ランディングページ ワイヤーフレーム）</a></small>
-                            </dd>
-                        </div>
-                        <div class="project-summary__item">
-                            <dt class="project-summary__term">制作期間</dt>
-                            <dd class="project-summary__desc">9日間</dd>
-                        </div>
-                        <div class="project-summary__item">
-                            <dt class="project-summary__term">課題</dt>
-                            <dd class="project-summary__desc">非エンジニアも管理画面から運用や修正を行えるよう制作</dd>
-                        </div>
-                        <div class="project-summary__item">
-                            <dt class="project-summary__term">解決策</dt>
-                            <dd class="project-summary__desc">ACF Blocksを利用し、管理画面からレイアウトが組めるカスタムブロックを実装。ブロック単位での追加や編集を可能に。</dd>
-                        </div>
-                    </dl>
-                </section>
-
-                <section class="project-feature">
-                    <h2 class="project-feature__section-title">Features</h2>
-                    <div class="scroll-line js-scroll-line"></div>
-
-                    <div class="project-media-text">
-                        <figure class="project-media-text__media">
-                            <a href="./img/chatbot-lp-admin-panel.png" 
-                               class="js-lightbox"
-                               target="_blank">
-                                <img src="./img/chatbot-lp-admin-panel.png" alt="管理画面の編集UI">
-                            </a>
-                        </figure>
-        
-                        <div class="project-media-text__content">
-                            <h3 class="project-media-text__title">誰でも直感的に更新できる管理画面</h3>
-                            <p class="project-media-text__desc">
-                                ACF Blocksを活用し、管理画面から直接コンテンツを編集できるよう構築しました。<br>
-                                プレビューを確認せずとも、管理画面上のレイアウトで直感的に更新が可能です。
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="project-media-text">
-                        <figure class="project-media-text__media">
-                            <a href="./img/chatbot-lp-admin-panel.png" 
-                               class="js-lightbox" 
-                               target="_blank">
-                                <img src="./img/chatbot-lp-admin-panel.png" alt="管理画面の編集UI">
-                            </a>
-                        </figure>
-        
-                        <div class="project-media-text__content">
-                            <h3 class="project-media-text__title">誰でも直感的に更新できる管理画面</h3>
-                            <p class="project-media-text__desc">
-                                ACF Blocksを活用し、管理画面から直接コンテンツを編集できるよう構築しました。<br>
-                                プレビューを確認せずとも、管理画面上のレイアウトで直感的に更新が可能です。
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="project-tech">
-                    <h2 class="project-tech__section-title">Tech Stack</h2>
-                    <div class="scroll-line js-scroll-line"></div>
-                    
-                    <ul class="tech-list">
-                        <li class="tech-list__item">
-                            <span class="tech-list__category">Frontend</span>
-                            <span class="tech-list__name">HTML5 / Sass / JavaScript</span>
-                        </li>
-                        <li class="tech-list__item">
-                            <span class="tech-list__category">CMS</span>
-                            <span class="tech-list__name">WordPress / PHP / ACF Blocks</span>
-                        </li>
-                        <li class="tech-list__item">
-                            <span class="tech-list__category">Tools</span>
-                            <span class="tech-list__name">VSCode / GitHub / Figma</span>
-                        </li>
-                    </ul>
-                </section>
-
-                <section class="project-detail__cta">
-                    <h2 class="project-detail__cta-title">このプロジェクトの詳細を確認する</h2>
-                    <div class="column__buttons project-links">
-                        <a href="https://example.com" class="btn btn--primary" target="_blank">実際のサイトを見る</a>
-                        <a href="https://github.com/..." class="btn btn--secondary" target="_blank">GitHubでコードを見る</a>
-                    </div>
-                </section>
-                
-            </div>
-
-        </article>
-
-
-        <!-- フッターここから -->
-        <footer class="footer">
-            <div class="footer__inner">
-                <p class="footer__credit">Design: <a href="https://www.figma.com/community/file/1276573947309032643/junior-developer-portfolio-template" target="_blank" rel="noopener noreferrer">Aman Singh Bhogal様（Junior Developer Portfolio Template）</a></p>
-                <small class="footer__copyright">&copy; 2026 Web Creator Omiya All Rights Reserved.</small>
-            </div>
-        </footer>
-        <!-- フッターここまで -->
-
-        <!-- トップへ戻るボタン -->
-        <a href="#" class="js-scroll-top scroll-top">
-            <i class="fa-solid fa-chevron-up"></i>
-        </a>
-    
-        <!-- JS読み込み -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe-lightbox.esm.min.js" type="module" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
-        <script src="js/main.js" type="module" defer></script>
-
-    </body>
-</html>
+<?php get_footer(); ?>

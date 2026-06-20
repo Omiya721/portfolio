@@ -1,232 +1,166 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Font Awesome (アイコン font) の読み込み -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <!-- Google Fonts (Noto Sans JP) -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./css/style.css">
-        <title>Misa Omiya | PortfolioSite</title>
-    </head>
-    <body>
+<?php get_header(); ?>
 
-        <!-- ヘッダーここから -->
-        <header class="header">
-            <div class="header__inner">
+    <!-- ヒーローここから -->
+    <section class="hero">
 
-                <div class="header__logo">
-                    <a href="./index.html">M.Omiya</a>
-                </div>
-
-                <button type="button" class="header__hamburger js-hamburger" aria-label="メニューを開閉する">
-                    <span class="header__hamburger-line"></span>
-                    <span class="header__hamburger-line"></span>
-                    <span class="header__hamburger-line"></span>
-                </button>
-
-                <nav class="header__nav">
-                    <ul class="header__list">
-                        <li class="header__item"><a href="./index.html" class="header__link js-nav-link">Top</a></li>
-                        <li class="header__item"><a href="#created" class="header__link js-nav-link">Created</a></li>
-                        <li class="header__item"><a href="#services" class="header__link js-nav-link">Services</a></li>
-                        <li class="header__item">
-                            <a href="#contact" class="btn header__btn js-nav-link">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-
-            </div>
-        </header>
-        <!-- ヘッダーここまで -->
-
-        <!-- ヒーローここから -->
-        <section class="hero">
-
-            <div class="hero__inner">
-                <div class="hero__content">
-      
-                    <h1 class="hero__title js-fadein-hero">ブロックエディタ対応LPから既存HTMLのテーマ化まで<br>幅広く対応するWordPress実装</h1>
-      
-                    <p class="hero__text js-fadein-hero">
-                        ACF Blocksを用いたコンポーネント開発(ブロックエディタ対応)や、<br>
-                        ACF/CPTを使用したクラシックなサイト構築、既存HTMLからのWordPress化など、<br>
-                        ご要望の仕様に合わせて丁寧にコーディングいたします。
-                    </p>
-      
-                    <div class="column__buttons js-fadein-hero">
-                        <a href="#services" class="btn btn--secondary">Services</a>
-                        <a href="#contact" class="btn btn--primary">Contact</a>
-                    </div>
-
-                </div>
-            </div>
-
-        </section>
-        <!-- ヒーローここまで -->
-
-        <!-- 制作物ここから -->
-        <section class="created">
-
-            <div class="created__inner">
+        <div class="hero__inner">
+            <div class="hero__content">
     
-                <h2 class="created__title">Created</h2>
-                <div class="scroll-line js-scroll-line"></div>
+                <h1 class="hero__title js-fadein-hero">ブロックエディタ対応LPから既存HTMLのテーマ化まで<br>幅広く対応するWordPress実装</h1>
     
-                <div class="created__list">
-      
-                    <a href="./single.html" class="created__item card">
-                        <div class="card__inner-box">
-                            <div class="card__img-wrapper">
-                                <img src="./img/created1.png" alt="AIチャットボット導入LPのモックアップ" class="card__img">
-                            </div>
-                            <h3 class="card__title">【自主制作】AIチャットボット導入LP</h3>
-                            <p class="card__text">
-                                AIチャットボットの導入を促すBtoB向けのサービスLPです。<br>
-                                クライアント側での自由なページ運用を想定し、ACF Blocksを用いた高度なブロックエディタ化を実装しています。<br>
-                                各セクションをカスタムブロック化しているため、専門知識がなくても管理画面から直感的にコンテンツの追加や並び替え、文言の修正が可能です。
-                            </p>
-                            <p class="card__tech">WordPress / ACF Blocks / HTML / CSS</p>
-                            <div class="card__links">
-                                <span data-link="#" class="card__link-icon js-sns-link">
-                                    <i class="fa-brands fa-github"></i>
-                                </span>
-                                <span data-link="#" class="card__link-icon js-sns-link">
-                                    <i class="fa-solid fa-link"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="./single.html" class="created__item card">
-                        <div class="card__inner-box">
-                            <div class="card__img-wrapper">
-                                <img src="./img/created2.png" alt="地域密着型 不動産会社HPのモックアップ" class="card__img">
-                            </div>
-                            <h3 class="card__title">【自主制作】地域密着型 不動産会社HP</h3>
-                            <p class="card__text">
-                                HTMLテンプレートをベースにWordPress化したサイトです。<br>
-                                カスタム投稿タイプとタクソノミーを実装し、各条件に応じた物件一覧を動的に出力。<br>
-                                さらにSCFの繰り返し機能を用いた複数画像登録や、ACFによる条件分岐など、HTMLの知識がないクライアントでも迷わずに入稿できる実用的な管理画面を設計しました。
-                            </p>
-                            <p class="card__tech">WordPress / CPT / Taxonomy / SCF / ACF / PHP</p>
-                            <div class="card__links">
-                                <span data-link="#" class="card__link-icon js-sns-link">
-                                    <i class="fa-solid fa-link"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-        </section>
-        <!-- 制作物ここまで -->
-
-        <!-- できることここから -->
-        <section class="services">
-
-            <div class="services__inner">
-
-                <h2 class="services__title">Services</h2>
-                <div class="scroll-line js-scroll-line"></div>
-
-                <p class="services__lead">
-                    コーディング・WordPress実装のパートナーとして、以下の業務に対応しております。<br>
-                    丁寧な確認と迅速な連絡を心がけておりますので、まずはお気軽にご相談ください。
+                <p class="hero__text js-fadein-hero">
+                    ACF Blocksを用いたコンポーネント開発(ブロックエディタ対応)や、<br>
+                    ACF/CPTを使用したクラシックなサイト構築、既存HTMLからのWordPress化など、<br>
+                    ご要望の仕様に合わせて丁寧にコーディングいたします。
                 </p>
-
-                <ul class="services__list">
-      
-                    <li class="services__item">
-                        <strong class="services__term">WordPressテーマ化</strong>
-                        <p class="services__description">（既存HTMLやデザインデータからのオリジナルテーマ構築、クラシックエディタでのACF/CPT実装に対応します。）</p>
-                    </li>
-
-                    <li class="services__item">
-                        <strong class="services__term">ブロックエディタ対応</strong>
-                        <p class="services__description">（ACF Blocksを活用し、クライアント様側でセクションの並び替えや編集が直感的に行えるLP・ページを構築します。）</p>
-                    </li>
-
-                    <li class="services__item">
-                        <strong class="services__term">レスポンシブ実装</strong>
-                        <p class="services__description">（スマートフォンやタブレットなど、どの端末から見てもデザインが崩れない、見やすく扱いやすいコーディングを行います。）</p>
-                    </li>
-      
-                </ul>
-
-            </div>
-        </section>
-        <!-- できることここまで -->
-
-        <!-- お問い合わせフォームここから -->
-        <section id="contact" class="contact">
-
-            <div class="contact__inner">
-
-                <h2 class="contact__title">Contact</h2>
-                <div class="scroll-line js-scroll-line"></div>
-
-                <form action="" method="post" class="contact__form form">
-                    <div class="form__wrapper">
-        
-                        <div class="form__column">
-          
-                            <div class="form__field">
-                                <label for="name" class="form__label">お名前</label>
-                                <input type="text" id="name" name="name" placeholder="山田 太郎" class="form__input" required>
-                            </div>
-          
-                            <div class="form__field">
-                                <label for="email" class="form__label">メールアドレス</label>
-                                <input type="email" id="email" name="email" placeholder="example@example.com" class="form__input" required>
-                            </div>
-          
-                        </div>
-
-                        <div class="form__column">
-                            <div class="form__field form__field--textarea">
-                                <label for="message" class="form__label">お問い合わせ内容</label>
-                                <textarea id="message" name="message" placeholder="ご相談内容をご記入ください" class="form__textarea" required></textarea>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="form__submit-area">
-                        <button type="submit" class="btn btn--primary form__submit-btn">Submit</button>
-                    </div>
-
-                </form>
-
-            </div>
-        </section>
-        <!-- お問い合わせフォームここまで -->
-
-        <!-- フッターここから -->
-        <footer class="footer">
-            <div class="footer__inner">
-                <p class="footer__credit">Design: <a href="https://www.figma.com/community/file/1276573947309032643/junior-developer-portfolio-template" target="_blank" rel="noopener noreferrer">Aman Singh Bhogal様（Junior Developer Portfolio Template）</a></p>
-                <small class="footer__copyright">&copy; 2026 Web Creator Omiya All Rights Reserved.</small>
-            </div>
-        </footer>
-        <!-- フッターここまで -->
-
-        <!-- トップへ戻るボタン -->
-        <a href="#" class="js-scroll-top scroll-top">
-            <i class="fa-solid fa-chevron-up"></i>
-        </a>
     
-        <!-- JS読み込み -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/Luminous.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/LuminousGallery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-        <script src="js/main.js" type="module" defer></script>
+                <div class="column__buttons js-fadein-hero">
+                    <a href="#services" class="btn btn--secondary">Services</a>
+                    <a href="#contact" class="btn btn--primary">Contact</a>
+                </div>
 
-    </body>
-</html>
+            </div>
+        </div>
+
+    </section>
+    <!-- ヒーローここまで -->
+
+    <!-- 制作物ここから -->
+    <section class="created">
+
+        <div class="created__inner">
+
+            <h2 class="created__title">Created</h2>
+            <div class="scroll-line js-scroll-line"></div>
+
+            <div class="created__list">
+    
+                <a href="./single.html" class="created__item card">
+                    <div class="card__inner-box">
+                        <div class="card__img-wrapper">
+                            <img src="./img/created1.png" alt="AIチャットボット導入LPのモックアップ" class="card__img">
+                        </div>
+                        <h3 class="card__title">【自主制作】AIチャットボット導入LP</h3>
+                        <p class="card__text">
+                            AIチャットボットの導入を促すBtoB向けのサービスLPです。<br>
+                            クライアント側での自由なページ運用を想定し、ACF Blocksを用いた高度なブロックエディタ化を実装しています。<br>
+                            各セクションをカスタムブロック化しているため、専門知識がなくても管理画面から直感的にコンテンツの追加や並び替え、文言の修正が可能です。
+                        </p>
+                        <p class="card__tech">WordPress / ACF Blocks / HTML / CSS</p>
+                        <div class="card__links">
+                            <span data-link="#" class="card__link-icon js-sns-link">
+                                <i class="fa-brands fa-github"></i>
+                            </span>
+                            <span data-link="#" class="card__link-icon js-sns-link">
+                                <i class="fa-solid fa-link"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="./single.html" class="created__item card">
+                    <div class="card__inner-box">
+                        <div class="card__img-wrapper">
+                            <img src="./img/created2.png" alt="地域密着型 不動産会社HPのモックアップ" class="card__img">
+                        </div>
+                        <h3 class="card__title">【自主制作】地域密着型 不動産会社HP</h3>
+                        <p class="card__text">
+                            HTMLテンプレートをベースにWordPress化したサイトです。<br>
+                            カスタム投稿タイプとタクソノミーを実装し、各条件に応じた物件一覧を動的に出力。<br>
+                            さらにSCFの繰り返し機能を用いた複数画像登録や、ACFによる条件分岐など、HTMLの知識がないクライアントでも迷わずに入稿できる実用的な管理画面を設計しました。
+                        </p>
+                        <p class="card__tech">WordPress / CPT / Taxonomy / SCF / ACF / PHP</p>
+                        <div class="card__links">
+                            <span data-link="#" class="card__link-icon js-sns-link">
+                                <i class="fa-solid fa-link"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!-- 制作物ここまで -->
+
+    <!-- できることここから -->
+    <section class="services">
+
+        <div class="services__inner">
+
+            <h2 class="services__title">Services</h2>
+            <div class="scroll-line js-scroll-line"></div>
+
+            <p class="services__lead">
+                コーディング・WordPress実装のパートナーとして、以下の業務に対応しております。<br>
+                丁寧な確認と迅速な連絡を心がけておりますので、まずはお気軽にご相談ください。
+            </p>
+
+            <ul class="services__list">
+    
+                <li class="services__item">
+                    <strong class="services__term">WordPressテーマ化</strong>
+                    <p class="services__description">（既存HTMLやデザインデータからのオリジナルテーマ構築、クラシックエディタでのACF/CPT実装に対応します。）</p>
+                </li>
+
+                <li class="services__item">
+                    <strong class="services__term">ブロックエディタ対応</strong>
+                    <p class="services__description">（ACF Blocksを活用し、クライアント様側でセクションの並び替えや編集が直感的に行えるLP・ページを構築します。）</p>
+                </li>
+
+                <li class="services__item">
+                    <strong class="services__term">レスポンシブ実装</strong>
+                    <p class="services__description">（スマートフォンやタブレットなど、どの端末から見てもデザインが崩れない、見やすく扱いやすいコーディングを行います。）</p>
+                </li>
+    
+            </ul>
+
+        </div>
+    </section>
+    <!-- できることここまで -->
+
+    <!-- お問い合わせフォームここから -->
+    <section id="contact" class="contact">
+
+        <div class="contact__inner">
+
+            <h2 class="contact__title">Contact</h2>
+            <div class="scroll-line js-scroll-line"></div>
+
+            <form action="" method="post" class="contact__form form">
+                <div class="form__wrapper">
+    
+                    <div class="form__column">
+        
+                        <div class="form__field">
+                            <label for="name" class="form__label">お名前</label>
+                            <input type="text" id="name" name="name" placeholder="山田 太郎" class="form__input" required>
+                        </div>
+        
+                        <div class="form__field">
+                            <label for="email" class="form__label">メールアドレス</label>
+                            <input type="email" id="email" name="email" placeholder="example@example.com" class="form__input" required>
+                        </div>
+        
+                    </div>
+
+                    <div class="form__column">
+                        <div class="form__field form__field--textarea">
+                            <label for="message" class="form__label">お問い合わせ内容</label>
+                            <textarea id="message" name="message" placeholder="ご相談内容をご記入ください" class="form__textarea" required></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form__submit-area">
+                    <button type="submit" class="btn btn--primary form__submit-btn">Submit</button>
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+    <!-- お問い合わせフォームここまで -->
+
+<?php get_footer(); ?>
