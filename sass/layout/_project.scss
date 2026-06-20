@@ -1,9 +1,9 @@
 @use "../foundation/base" as *;
 
 .project-detail {
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 140px 20px 40px 20px;
+    padding: 140px 2.5% 40px 2.5%;
 
     &__intro {
         text-align: center;
@@ -12,8 +12,12 @@
 
     &__hero {
         margin-bottom: 30px;
-        width: 800px;
+        max-width: 800px;
         margin: 0 auto;
+
+        @media #{$breakpoint-sp} {
+            width: auto;
+        }
         
         &-img {
         width: 100%;
@@ -27,6 +31,10 @@
         font-size: 2rem;
         margin-bottom: 16px;
         margin-top: 40px;
+
+        @media #{$breakpoint-sp} {
+            font-size: clamp(20px, 5vw, 28px);
+        }
     }
 
     &__lead {
@@ -63,10 +71,18 @@
         font-weight: 700;
         text-align: center;
         color: $color-text-main;
+
+        @media #{$breakpoint-sp} {
+            font-size: clamp(28px, 5vw, 32px);
+        }
     }
 
     &__list {
         margin-top: 60px;
+
+        @media #{$breakpoint-sp} {
+            padding: 0 10.4%;
+        }
     }
 
     &__item {
@@ -110,6 +126,10 @@
         font-weight: 700;
         text-align: center;
         color: $color-text-main;
+
+        @media #{$breakpoint-sp} {
+            font-size: clamp(28px, 5vw, 32px);
+        }
     }
 }
 
@@ -125,7 +145,7 @@
         flex: 1;
     }
 
-    @media (max-width: 768px) {
+    @media #{$breakpoint-sp} {
         flex-direction: column;
         gap: 20px;
     }
@@ -140,6 +160,10 @@
     &__title {
         font-size: 1.5rem;
         margin-bottom: 16px;
+
+        @media #{$breakpoint-sp} {
+            font-size: clamp(18px, 5vw, 28px);
+        }
     }
 
     &__desc {
@@ -151,16 +175,24 @@
 .project-tech {
   margin-bottom: 160px;
 
-  &__section-title {
+    &__section-title {
         font-size: 32px;
         font-weight: 700;
         text-align: center;
         color: $color-text-main;
+
+        @media #{$breakpoint-sp} {
+            font-size: clamp(28px, 5vw, 32px);
+        }
     }
 }
 
 .tech-list {
     margin-top: 30px;
+
+    @media #{$breakpoint-sp} {
+        padding: 0 10.4%;
+    }
 
     &__item {
         display: flex;
@@ -191,5 +223,9 @@
         font-size: 1.5rem;
         margin-bottom: 30px;
         color: $color-text-main;
+
+        @media #{$breakpoint-sp} {
+            font-size: clamp(20px, 5vw, 28px);
+        }
     }
 }

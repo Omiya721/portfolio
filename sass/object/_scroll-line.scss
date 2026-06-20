@@ -12,6 +12,10 @@
 
     &--title {
     width: 600px;
+
+    @media #{$breakpoint-sp} {
+      width: 70%;
+    }
   }
 }
 

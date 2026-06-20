@@ -47,24 +47,24 @@
             text-align: left;
         }
     }
+}
 
-    &__buttons {
+.column__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+    .btn {
+        width: 200px;
+        height: 50px;
         display: flex;
         justify-content: center;
-        gap: 40px;
+        align-items: center;
+    }
 
-        .btn {
-            width: 200px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        @media #{$breakpoint-sp} {
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-        }
+    @media #{$breakpoint-sp} {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
     }
 }
