@@ -10,6 +10,10 @@ $layout-inner-width: 1440px;
 
 $breakpoint-sp: "screen and (max-width: 767px)";
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
     font-family: "Noto Sans JP", sans-serif;

@@ -34,49 +34,61 @@
             <div class="scroll-line js-scroll-line"></div>
 
             <div class="created__list">
-    
-                <a href="./single.html" class="created__item card">
-                    <div class="card__inner-box">
-                        <div class="card__img-wrapper">
-                            <img src="./img/created1.png" alt="AIチャットボット導入LPのモックアップ" class="card__img">
-                        </div>
-                        <h3 class="card__title">【自主制作】AIチャットボット導入LP</h3>
-                        <p class="card__text">
-                            AIチャットボットの導入を促すBtoB向けのサービスLPです。<br>
-                            クライアント側での自由なページ運用を想定し、ACF Blocksを用いた高度なブロックエディタ化を実装しています。<br>
-                            各セクションをカスタムブロック化しているため、専門知識がなくても管理画面から直感的にコンテンツの追加や並び替え、文言の修正が可能です。
-                        </p>
-                        <p class="card__tech">WordPress / ACF Blocks / HTML / CSS</p>
-                        <div class="card__links">
-                            <span data-link="#" class="card__link-icon js-sns-link">
-                                <i class="fa-brands fa-github"></i>
-                            </span>
-                            <span data-link="#" class="card__link-icon js-sns-link">
-                                <i class="fa-solid fa-link"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
 
-                <a href="./single.html" class="created__item card">
+            <?php
+                $args = array(
+                    'post_type'      => 'created', // カスタム投稿タイプ名
+                    'posts_per_page' => -1,        // 全件表示
+                    'orderby'        => 'date',    // 日付順
+                    'order'          => 'DESC'     // 新しい順
+                );
+
+                $the_query = new WP_Query($args);
+
+                if ($the_query->have_posts()) :
+                    while ($the_query->have_posts()) : $the_query->the_post(); 
+            ?>
+    
+                <div class="created__item card">
                     <div class="card__inner-box">
-                        <div class="card__img-wrapper">
-                            <img src="./img/created2.png" alt="地域密着型 不動産会社HPのモックアップ" class="card__img">
-                        </div>
-                        <h3 class="card__title">【自主制作】地域密着型 不動産会社HP</h3>
-                        <p class="card__text">
-                            HTMLテンプレートをベースにWordPress化したサイトです。<br>
-                            カスタム投稿タイプとタクソノミーを実装し、各条件に応じた物件一覧を動的に出力。<br>
-                            さらにSCFの繰り返し機能を用いた複数画像登録や、ACFによる条件分岐など、HTMLの知識がないクライアントでも迷わずに入稿できる実用的な管理画面を設計しました。
-                        </p>
-                        <p class="card__tech">WordPress / CPT / Taxonomy / SCF / ACF / PHP</p>
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="card__img-wrapper">
+                                <?php 
+                                    $img = get_field('img');
+                                    if( !empty($img) ): 
+                                ?>
+                                    <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>" class="project-main-img">
+                                <?php endif; ?>
+                            </div>
+                            <h3 class="card__title"><?php echo esc_html(get_field('title')); ?></h3>
+                            <p class="card__text">
+                                <?php echo wp_kses_post(get_field('text')); ?>
+                            </p>
+                            <p class="card__tech"><?php echo esc_html(get_field('tech')); ?></p>
+                        </a>
+
                         <div class="card__links">
-                            <span data-link="#" class="card__link-icon js-sns-link">
-                                <i class="fa-solid fa-link"></i>
-                            </span>
+                            <?php if ($github = get_field('github_url')) : ?>
+                                <a href="<?php echo esc_url($github); ?>" target="_blank" rel="noopener noreferrer" class="card__link-icon">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            <?php endif; ?>
+
+                            <?php if ($site = get_field('site_url')) : ?>
+                                <a href="<?php echo esc_url($site); ?>" target="_blank" rel="noopener noreferrer" class="card__link-icon">
+                                    <i class="fa-solid fa-link"></i>
+                                </a>
+                            <?php endif; ?>
                         </div>
                     </div>
-                </a>
+                </div>
+
+                <?php endwhile;
+                    wp_reset_postdata();
+                else :
+                    echo '<p>まだ制作実績はありません。</p>';
+                endif;
+                ?>
 
             </div>
         </div>
@@ -97,21 +109,29 @@
             </p>
 
             <ul class="services__list">
-    
-                <li class="services__item">
-                    <strong class="services__term">WordPressテーマ化</strong>
-                    <p class="services__description">（既存HTMLやデザインデータからのオリジナルテーマ構築、クラシックエディタでのACF/CPT実装に対応します。）</p>
-                </li>
 
-                <li class="services__item">
-                    <strong class="services__term">ブロックエディタ対応</strong>
-                    <p class="services__description">（ACF Blocksを活用し、クライアント様側でセクションの並び替えや編集が直感的に行えるLP・ページを構築します。）</p>
-                </li>
+                <?php
+                    $args = array(
+                        'post_type'      => 'services', // カスタム投稿タイプ名
+                        'posts_per_page' => -1,        // 全件表示
+                        'orderby'        => 'date',    // 日付順
+                        'order'          => 'DESC'     // 新しい順
+                    );
 
-                <li class="services__item">
-                    <strong class="services__term">レスポンシブ実装</strong>
-                    <p class="services__description">（スマートフォンやタブレットなど、どの端末から見てもデザインが崩れない、見やすく扱いやすいコーディングを行います。）</p>
-                </li>
+                    $the_query = new WP_Query($args);
+
+                    if ($the_query->have_posts()) :
+                        while ($the_query->have_posts()) : $the_query->the_post(); 
+                ?>
+                    <li class="services__item">
+                        <strong class="services__term"><?php echo esc_html(get_field('services__title')); ?></strong>
+                        <p class="services__description">（<?php echo wp_kses_post(get_field('services__description')); ?>）</p>
+                    </li>
+                <?php 
+                        endwhile;
+                        wp_reset_postdata();
+                    endif;
+                ?>
     
             </ul>
 
