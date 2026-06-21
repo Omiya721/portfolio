@@ -12,7 +12,7 @@
             <div class="header__inner">
 
                 <div class="header__logo">
-                    <a href="./index.html">M.Omiya</a>
+                    <a href="<?php echo esc_url(home_url('/')); ?>">M.Omiya</a>
                 </div>
 
                 <button type="button" class="header__hamburger js-hamburger" aria-label="メニューを開閉する">
@@ -23,11 +23,11 @@
 
                 <nav class="header__nav">
                     <ul class="header__list">
-                        <li class="header__item"><a href="./index.html" class="header__link js-nav-link">Top</a></li>
-                        <li class="header__item"><a href="#created" class="header__link js-nav-link">Created</a></li>
-                        <li class="header__item"><a href="#services" class="header__link js-nav-link">Services</a></li>
+                        <li class="header__item"><a href="<?php echo esc_url(home_url('/')); ?>" class="header__link js-nav-link">Top</a></li>
+                        <li class="header__item"><a href="<?php echo esc_url(home_url('/#created')); ?>" class="header__link js-nav-link">Created</a></li>
+                        <li class="header__item"><a href="<?php echo esc_url(home_url('/#services')); ?>" class="header__link js-nav-link">Services</a></li>
                         <li class="header__item">
-                            <a href="#contact" class="btn header__btn js-nav-link">Contact</a>
+                            <a href="<?php echo esc_url(home_url('/#contact')); ?>" class="btn header__btn js-nav-link">Contact</a>
                         </li>
                     </ul>
                 </nav>

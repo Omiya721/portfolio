@@ -26,7 +26,7 @@
     <!-- ヒーローここまで -->
 
     <!-- 制作物ここから -->
-    <section class="created">
+    <section id="created" class="created">
 
         <div class="created__inner">
 
@@ -96,7 +96,7 @@
     <!-- 制作物ここまで -->
 
     <!-- できることここから -->
-    <section class="services">
+    <section id="services" class="services">
 
         <div class="services__inner">
 
