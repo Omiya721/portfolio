@@ -4,15 +4,24 @@
 
         <section class="project-detail__intro">
             <div class="project-detail__hero">
-                <img src="./img/created1.png" alt="AIチャットボット導入LP" class="project-detail__hero-img">
+                <?php 
+                    $img = get_field('img');
+                    if( !empty($img) ): 
+                ?>
+                    <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>" class="project-detail__hero-img">
+                <?php endif; ?>
             </div>
-            <h1 class="project-detail__title">【自主制作】AIチャットボット導入LP</h1>
+            <h1 class="project-detail__title"><?php echo esc_html(get_field('title')); ?></h1>
             <div class="scroll-line scroll-line--title js-scroll-line"></div>
-            <p class="project-detail__lead">デザインデータをもとに、保守性を考慮したコーディングとWordPress実装を担当しました。</p>
+            <p class="project-detail__lead"><?php echo wp_kses_post(get_field('lead')); ?></p>
 
             <div class="column__buttons project-links">
-                <a href="https://example.com" class="btn btn--primary" target="_blank">実際のサイトを見る</a>
-                <a href="https://github.com/..." class="btn btn--secondary" target="_blank">GitHubでコードを見る</a>
+                <?php if ($github = get_field('github_url')) : ?>
+                    <a href="<?php echo esc_url($github); ?>" target="_blank" class="btn btn--primary">GitHubでコードを見る</a>
+                <?php endif; ?>
+                <?php if ($site = get_field('site_url')) : ?>
+                    <a href="<?php echo esc_url($site); ?>" target="_blank" class="btn btn--secondary">実際のサイトを見る</a>
+                <?php endif; ?>
             </div>
         </section>
 
@@ -25,21 +34,23 @@
                     <div class="project-summary__item">
                         <dt class="project-summary__term">担当範囲</dt>
                         <dd class="project-summary__desc">
-                            コーディング、WordPress構築、運用設計
-                            <small>Design: <a href="https://www.figma.com/community/file/1220421382277658314/btob" target="_blank" rel="noopener noreferrer">acoco1102様（BtoB ランディングページ ワイヤーフレーム）</a></small>
+                            <?php echo esc_html(get_field('charge')); ?>
+                            <?php if ($design = get_field('design')) : ?>
+                                <small>Design: <a href="<?php echo esc_url('design_credits'); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html($design); ?></a></small>
+                            <?php endif; ?>
                         </dd>
                     </div>
                     <div class="project-summary__item">
                         <dt class="project-summary__term">制作期間</dt>
-                        <dd class="project-summary__desc">9日間</dd>
+                        <dd class="project-summary__desc"><?php echo esc_html(get_field('period')); ?></dd>
                     </div>
                     <div class="project-summary__item">
                         <dt class="project-summary__term">課題</dt>
-                        <dd class="project-summary__desc">非エンジニアも管理画面から運用や修正を行えるよう制作</dd>
+                        <dd class="project-summary__desc"><?php echo wp_kses_post(get_field('assignment')); ?></dd>
                     </div>
                     <div class="project-summary__item">
                         <dt class="project-summary__term">解決策</dt>
-                        <dd class="project-summary__desc">ACF Blocksを利用し、管理画面からレイアウトが組めるカスタムブロックを実装。ブロック単位での追加や編集を可能に。</dd>
+                        <dd class="project-summary__desc"><?php echo wp_kses_post(get_field('solution')); ?></dd>
                     </div>
                 </dl>
             </section>
@@ -48,41 +59,16 @@
                 <h2 class="project-feature__section-title">Features</h2>
                 <div class="scroll-line js-scroll-line"></div>
 
-                <div class="project-media-text">
-                    <figure class="project-media-text__media">
-                        <a href="./img/chatbot-lp-admin-panel.png" 
-                            class="js-lightbox"
-                            target="_blank">
-                            <img src="./img/chatbot-lp-admin-panel.png" alt="管理画面の編集UI">
-                        </a>
-                    </figure>
-    
-                    <div class="project-media-text__content">
-                        <h3 class="project-media-text__title">誰でも直感的に更新できる管理画面</h3>
-                        <p class="project-media-text__desc">
-                            ACF Blocksを活用し、管理画面から直接コンテンツを編集できるよう構築しました。<br>
-                            プレビューを確認せずとも、管理画面上のレイアウトで直感的に更新が可能です。
-                        </p>
-                    </div>
-                </div>
+                <?php for ($i = 1; $i <= 10; $i++): ?>
+                    <?php if(get_field('feature_' . $i . '_img')): ?>
+                        <?php get_template_part('template-parts/content', 'feature', [
+                            'img'   => get_field('feature_' . $i . '_img'),
+                            'title' => get_field('feature_' . $i . '_title'),
+                            'desc'  => get_field('feature_' . $i . '_desc'),
+                        ]); ?>
+                    <?php endif; ?>
+                <?php endfor; ?>
 
-                <div class="project-media-text">
-                    <figure class="project-media-text__media">
-                        <a href="./img/chatbot-lp-admin-panel.png" 
-                            class="js-lightbox" 
-                            target="_blank">
-                            <img src="./img/chatbot-lp-admin-panel.png" alt="管理画面の編集UI">
-                        </a>
-                    </figure>
-    
-                    <div class="project-media-text__content">
-                        <h3 class="project-media-text__title">誰でも直感的に更新できる管理画面</h3>
-                        <p class="project-media-text__desc">
-                            ACF Blocksを活用し、管理画面から直接コンテンツを編集できるよう構築しました。<br>
-                            プレビューを確認せずとも、管理画面上のレイアウトで直感的に更新が可能です。
-                        </p>
-                    </div>
-                </div>
             </section>
 
             <section class="project-tech">
@@ -90,26 +76,39 @@
                 <div class="scroll-line js-scroll-line"></div>
                 
                 <ul class="tech-list">
-                    <li class="tech-list__item">
-                        <span class="tech-list__category">Frontend</span>
-                        <span class="tech-list__name">HTML5 / Sass / JavaScript</span>
-                    </li>
-                    <li class="tech-list__item">
-                        <span class="tech-list__category">CMS</span>
-                        <span class="tech-list__name">WordPress / PHP / ACF Blocks</span>
-                    </li>
-                    <li class="tech-list__item">
-                        <span class="tech-list__category">Tools</span>
-                        <span class="tech-list__name">VSCode / GitHub / Figma</span>
-                    </li>
+                    <?php if ($frontend = get_field('frontend')) : ?>
+                        <li class="tech-list__item">
+                            <span class="tech-list__category">Frontend</span>
+                            <span class="tech-list__name"><?php echo esc_html($frontend); ?></span>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if ($cms = get_field('cms')) : ?>
+                        <li class="tech-list__item">
+                            <span class="tech-list__category">CMS</span>
+                            <span class="tech-list__name"><?php echo esc_html($cms); ?></span>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if ($tools = get_field('tools')) : ?>
+                        <li class="tech-list__item">
+                            <span class="tech-list__category">Tools</span>
+                            <span class="tech-list__name"><?php echo esc_html($tools); ?></span>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </section>
 
             <section class="project-detail__cta">
                 <h2 class="project-detail__cta-title">このプロジェクトの詳細を確認する</h2>
+                
                 <div class="column__buttons project-links">
-                    <a href="https://example.com" class="btn btn--primary" target="_blank">実際のサイトを見る</a>
-                    <a href="https://github.com/..." class="btn btn--secondary" target="_blank">GitHubでコードを見る</a>
+                    <?php if ($github = get_field('github_url')) : ?>
+                        <a href="<?php echo esc_url($github); ?>" target="_blank" class="btn btn--primary">GitHubでコードを見る</a>
+                    <?php endif; ?>
+                    <?php if ($site = get_field('site_url')) : ?>
+                        <a href="<?php echo esc_url($site); ?>" target="_blank" class="btn btn--secondary">実際のサイトを見る</a>
+                    <?php endif; ?>
                 </div>
             </section>
             
