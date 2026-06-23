@@ -59,7 +59,7 @@
                 <h2 class="project-feature__section-title">Features</h2>
                 <div class="scroll-line js-scroll-line"></div>
 
-                <?php for ($i = 1; $i <= 10; $i++): ?>
+                <?php for ($i = 1; $i <= 5; $i++): ?>
                     <?php if(get_field('feature_' . $i . '_img')): ?>
                         <?php get_template_part('template-parts/content', 'feature', [
                             'img'   => get_field('feature_' . $i . '_img'),
