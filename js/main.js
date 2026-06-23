@@ -102,17 +102,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // PhotoSwipe
   document.querySelectorAll('.js-lightbox').forEach(link => {
+    
     const img = link.querySelector('img');
-    if (img) {
-      if (img.complete) {
-        setDimensions(link, img);
-      } else {
-        img.onload = () => setDimensions(link, img);
-      }
+    
+    // 画像が既に読み込まれていたらサイズを設定、まだならロードを待つ
+    if (img.complete) {
+      setDimensions(link, img);
+    } else {
+      img.onload = () => setDimensions(link, img);
     }
   });
 
   function setDimensions(link, img) {
+    // 画像の本来のサイズ（naturalWidth/Height）を取得してdata属性にセット
     link.setAttribute('data-pswp-width', img.naturalWidth);
     link.setAttribute('data-pswp-height', img.naturalHeight);
   }
@@ -122,6 +124,11 @@ document.addEventListener('DOMContentLoaded', () => {
     children: 'a.js-lightbox',
     pswpModule: () => import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.esm.min.js')
   });
+
+  lightbox.on('uiRegister', function() {
+    lightbox.pswp.options.padding = { top: 60, bottom: 60, left: 60, right: 60 };
+  });
+
   lightbox.init();
 
 });
