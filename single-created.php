@@ -36,7 +36,7 @@
                         <dd class="project-summary__desc">
                             <?php echo esc_html(get_field('charge')); ?>
                             <?php if ($design = get_field('design')) : ?>
-                                <small>Design: <a href="<?php echo esc_url('design_credits'); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html($design); ?></a></small>
+                                <small>Design: <a href="<?php echo esc_url(get_field('design_credits')); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html($design); ?></a></small>
                             <?php endif; ?>
                         </dd>
                     </div>

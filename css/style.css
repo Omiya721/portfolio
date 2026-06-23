@@ -645,6 +645,7 @@ img {
   .project-media-text {
     flex-direction: column;
     gap: 20px;
+    padding: 0 10.4%;
   }
 }
 .project-media-text__media img {
@@ -719,7 +720,7 @@ img {
 }
 @media screen and (max-width: 767px) {
   .project-detail__cta-title {
-    font-size: clamp(20px, 5vw, 28px);
+    font-size: clamp(18px, 5vw, 28px);
   }
 }
 

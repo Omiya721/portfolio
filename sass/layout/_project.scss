@@ -148,6 +148,7 @@
     @media #{$breakpoint-sp} {
         flex-direction: column;
         gap: 20px;
+        padding: 0 10.4%;
     }
 
     &__media img {
@@ -225,7 +226,7 @@
         color: $color-text-main;
 
         @media #{$breakpoint-sp} {
-            font-size: clamp(20px, 5vw, 28px);
+            font-size: clamp(18px, 5vw, 28px);
         }
     }
 }
